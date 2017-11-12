@@ -43,7 +43,7 @@ class FeatureSelectionGA:
             print("Shape od train_x: {} and target: {}".format(x.shape,y.shape))
         self.final_fitness = []
         self.fitness_in_generation = {}
-    
+    	self.best_ind = None
     
     def evaluate(self,individual):
         fit_obj = ff.FitenessFunction(self.cv_split)
@@ -201,7 +201,7 @@ class FeatureSelectionGA:
     
         print("-- Only the fittest survives --")
 
-        best_ind = tools.selBest(pop, 1)[0]
+        self.best_ind = tools.selBest(pop, 1)[0]
         print("Best individual is %s, %s" % (best_ind, best_ind.fitness.values))
         self.get_final_scores(pop,fits)
         
