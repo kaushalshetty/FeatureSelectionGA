@@ -42,7 +42,7 @@ class FeatureSelectionGA:
             print("Model {} will select best features among {} features using cv_split :{}.".format(model,x.shape[1],cv_split))
             print("Shape od train_x: {} and target: {}".format(x.shape,y.shape))
         self.final_fitness = []
-        self.fitness_in_generation = []
+        self.fitness_in_generation = {}
     
     
     def evaluate(self,individual):
