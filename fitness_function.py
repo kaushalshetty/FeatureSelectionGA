@@ -17,7 +17,6 @@ class FitenessFunction:
     
 
     def calculate_fitness(self,model,x,y):
-
         cv_set = np.repeat(-1.,x.shape[0])
         skf = StratifiedKFold(n_splits = self.n_splits)
         for train_index,test_index in skf.split(x,y):
