@@ -6,8 +6,9 @@ Data scientists find it really difficult to choose the right features to get max
 #### Usage:
 `model = LogisticRegression()
 fsga = FearureSelectionGA(model,x_train,y_train)
-pop = fsga.generate(100)`
+pop = fsga.generate(100)
 #Select the best individual from the final population and fit the initialized model
+`
 
 
 
