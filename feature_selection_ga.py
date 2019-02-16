@@ -202,7 +202,7 @@ class FeatureSelectionGA:
         print("-- Only the fittest survives --")
 
         self.best_ind = tools.selBest(pop, 1)[0]
-        print("Best individual is %s, %s" % (best_ind, best_ind.fitness.values))
+        print("Best individual is %s, %s" % (self.best_ind, self.best_ind.fitness.values))
         self.get_final_scores(pop,fits)
         
         return pop
