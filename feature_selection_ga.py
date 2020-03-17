@@ -14,7 +14,7 @@ class FeatureSelectionGA:
 
     
     """
-    def __init__(self,model,x,y,cv_split=5,verbose=0):
+    def __init__(self,model,x,y,cv_split=5,verbose=0, ff_obj = ff):
         """
             Parameters
             -----------
@@ -43,10 +43,11 @@ class FeatureSelectionGA:
             print("Shape od train_x: {} and target: {}".format(x.shape,y.shape))
         self.final_fitness = []
         self.fitness_in_generation = {}
-    	self.best_ind = None
+        self.best_ind = None
+        self.fitness_function = ff_obj
     
     def evaluate(self,individual):
-        fit_obj = ff.FitenessFunction(self.cv_split)
+        fit_obj = self.fitness_function.FitnessFunction(self.cv_split)
         np_ind = np.asarray(individual)
         if np.sum(np_ind) == 0:
             fitness = 0.0

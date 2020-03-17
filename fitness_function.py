@@ -1,8 +1,8 @@
 from sklearn.model_selection import StratifiedKFold
 import numpy as np
 from sklearn.metrics import f1_score
-
-class FitenessFunction:
+from sklearn.metrics import accuracy_score
+class FitnessFunction:
     
     def __init__(self,n_splits = 5,*args,**kwargs):
         """
@@ -27,4 +27,5 @@ class FitenessFunction:
             model.fit(x_train,y_train)
             predicted_y = model.predict(x_test)
             cv_set[test_index] = predicted_y
-        return f1_score(y,cv_set)
+        #return f1_score(y,cv_set)
+        return accuracy_score(y, cv_set)
