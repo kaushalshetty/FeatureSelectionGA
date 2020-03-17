@@ -44,7 +44,7 @@ class FitnessFunction:
 
 With this, we can design our own fitness function by defining our calculate fitness!
 Consider the following example from [Vieira, Mendoca, Sousa, et al. (2013)](http://www.sciencedirect.com/science/article/pii/S1568494613001361)
-```f(X) = \alpha(1-P) + (1-\alpha) \left(1 - \dfrac{N_f}{N_t}\right)```
+``` $f(X) = \alpha(1-P) + (1-\alpha) \left(1 - \dfrac{N_f}{N_t}\right)$ ```
 
 Define the constructor __init__ with needed parameters: alpha and N_t.
 ```
