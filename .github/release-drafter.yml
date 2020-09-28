@@ -1,0 +1,34 @@
+categories:
+  - title: '💥 Breaking Changes'
+    labels:
+      - 'breaking'
+  - title: '⚠️ Deprecations'
+    labels:
+      - 'deprecated'
+  - title: '🚀 Enhancements'
+    labels:
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+  - title: '🔥 Removals'
+    labels:
+      - 'removed'
+  - title: '📖 Documentation updates'
+    labels:
+      - 'documentation'
+  - title: '✅ Testing'
+    labels:
+      - 'tests'
+
+exclude-labels:
+  - 'automation'
+  - 'dependencies'
+  - 'nochangelog'
+
+name-template: 'v$NEXT_PATCH_VERSION'
+
+template: |
+  ## Changes
+
+  $CHANGES

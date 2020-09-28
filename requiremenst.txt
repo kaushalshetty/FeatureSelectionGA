@@ -1,2 +1,7 @@
-sklearn
-deap
+black
+bump2version
+coverage
+pytest-cov
+pytest
+twine
+wheel
