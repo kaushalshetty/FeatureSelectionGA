@@ -3,6 +3,8 @@ import random
 import numpy as np
 from deap import base, creator, tools
 
+from .fitness_function import FitnessFunction
+
 
 class FeatureSelectionGA:
     """
@@ -47,7 +49,7 @@ class FeatureSelectionGA:
         self.fitness_in_generation = {}
         self.best_ind = None
         if ff_obj == None:
-            self.fitness_function = ff_obj.FitnessFunction(n_splits=5)
+            self.fitness_function = FitnessFunction(n_splits=5)
         else:
             self.fitness_function = ff_obj
 

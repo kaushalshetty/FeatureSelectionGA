@@ -1,7 +1,6 @@
-from sklearn.model_selection import StratifiedKFold
 import numpy as np
-from sklearn.metrics import f1_score
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, f1_score
+from sklearn.model_selection import StratifiedKFold
 
 
 class FitnessFunction:
