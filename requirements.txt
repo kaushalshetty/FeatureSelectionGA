@@ -1,0 +1,11 @@
+black
+bump2version
+coverage
+pytest-cov
+pytest
+twine
+wheel
+# Install Requires
+numpy<2
+sklearn<1
+deap<2

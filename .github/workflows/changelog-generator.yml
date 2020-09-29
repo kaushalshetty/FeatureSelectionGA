@@ -1,0 +1,50 @@
+# This workflow generates the changelog file in the
+# documentation based on the merged pull requests
+# See more at: https://github.com/heinrichreimer/action-github-changelog-generator
+
+name: Changelog Generator
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  generate_changelog_file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.3.3
+
+    - name: Generate changelog
+      uses: browniebroke/action-github-changelog-generator@patch-2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        author: true
+        unreleased: true
+        issues: false
+        pullRequests: true
+        prWoLabels: false
+        compareLink: true
+        excludeLabels: automation,dependencies,nochangelog
+        breakingLabel: '### 💥 Breaking Changes:'
+        deprecatedLabel: '### ⚠️ Deprecations:'
+        enhancementLabel: '### 🚀 Enhancements:'
+        bugsLabel: '### 🐛 Bug Fixes:'
+        removedLabel: '### 🔥 Removals:'
+        addSections: '{"documentation":{"prefix":"### 📖 Documentation updates:","labels":["documentation"]},"tests":{"prefix":"### ✅ Testing:","labels":["tests"]}}'
+
+    - name: Commit changes
+      run: |
+        if [ -n "$(git status --short)" ]
+        then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Update Changelog" -a
+        else
+          echo "No changes to commit - skipping"
+        fi
+    - name: Push
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master
