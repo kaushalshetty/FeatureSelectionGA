@@ -15,6 +15,9 @@ Data scientists find it really difficult to choose the right features to get max
 $ pip install feature-selection-ga
 ```
 
+#### Documentation: 
+https://featureselectionga.readthedocs.io/en/latest/
+
 #### Usage:
 
 ```python
