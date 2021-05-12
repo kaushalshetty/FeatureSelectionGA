@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.3.3
+    - uses: actions/checkout@v2.3.4
 
     - name: Generate changelog
       uses: browniebroke/action-github-changelog-generator@patch-2
